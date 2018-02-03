@@ -10,7 +10,7 @@ import _pickle as cPickle
 import os
 from sklearn.model_selection import train_test_split
 
-data_path = "/Users/pengchengliu/Documents/GitHub/Loan_Prediction/data"
+data_path = "/Users/pengchengliu/Documents/GitHub/Loan_Prediction/data/"
 
 #craete a dicrectory if it doesn't exist
 #if not makes this more robust
@@ -21,7 +21,7 @@ if not os.path.exists("model"):
 if not os.path.exists("preds"):
     os.makedirs("preds")    
 
-train =pd.read_csv("train.csv")
+train =pd.read_csv(data_path+"train.csv")
 
 original = train
 
