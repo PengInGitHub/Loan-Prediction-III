@@ -10,6 +10,8 @@ import _pickle as cPickle
 import os
 from sklearn.model_selection import train_test_split
 
+data_path = "/Users/pengchengliu/Documents/GitHub/Loan_Prediction/data"
+
 #craete a dicrectory if it doesn't exist
 #if not makes this more robust
 if not os.path.exists("featurescore"):
@@ -19,7 +21,7 @@ if not os.path.exists("model"):
 if not os.path.exists("preds"):
     os.makedirs("preds")    
 
-train =pd.read_csv("/Users/pengchengliu/Documents/GitHub/Loan_Prediction/data/train.csv")
+train =pd.read_csv("train.csv")
 
 original = train
 
@@ -30,7 +32,7 @@ original = train
 #   2.num variable rankings    #
 ################################
 
-feature_type = pd.read_csv("/Users/pengchengliu/Documents/GitHub/Loan_Prediction/data/feature_type.csv")
+feature_type = pd.read_csv(data_path + "feature_type.csv")
 
 numeric_feature = list(feature_type[feature_type.feature_type=='Numerical'].feature_name)
 
@@ -43,4 +45,6 @@ for feature in numeric_feature:
     train_rank['r'+feature] = train_numeric[feature].rank(method='max')
 train_rank.to_csv('train_x_rank.csv',index=None)
 print (train_rank.shape)#(614, 7)
+
+
 
