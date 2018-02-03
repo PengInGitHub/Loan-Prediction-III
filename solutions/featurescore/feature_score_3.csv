@@ -1,6 +1,5 @@
 feature,score
-rApplicantIncome,13327
-rLoanAmount,11725
-rCoapplicantIncome,8075
-rDependents,2384
-rLoan_Amount_Term,1643
+rApplicantIncome,11620
+rLoanAmount,9390
+rCoapplicantIncome,6560
+rLoan_Amount_Term,950
