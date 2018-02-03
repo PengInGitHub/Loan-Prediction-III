@@ -11,7 +11,6 @@ import os
 from sklearn.model_selection import train_test_split
 
 #craete a dicrectory if it doesn't exist
-#https://stackoverflow.com/questions/273192/how-can-i-create-a-directory-if-it-does-not-exist
 #if not makes this more robust
 if not os.path.exists("featurescore"):
     os.makedirs("featurescore")
