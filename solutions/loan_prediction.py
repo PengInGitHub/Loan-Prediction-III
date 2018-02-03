@@ -223,7 +223,7 @@ if __name__ == "__main__":
         cPickle.dump((random_seed,gamma,max_depth,lambd,subsample,colsample_bytree,min_child_weight),f)
     
 
-#train 100 xgb
+#train 10 xgb
     for i in list(range(100)):
         pipeline(i,random_seed[i],gamma[i],max_depth[i%3],lambd[i],subsample[i],colsample_bytree[i],min_child_weight[i])
 
@@ -260,3 +260,5 @@ for (key,value) in fs:
 with open('rank_feature_score.csv','w') as f:
     f.writelines("feature,score\n")
     f.writelines(t)
+
+

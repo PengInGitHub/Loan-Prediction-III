@@ -2,7 +2,7 @@ feature_name,feature_type
 Loan_ID,Categorical
 Gender,Categorical
 Married,Categorical
-Dependents,Numerical
+Dependents,Categorical
 Education,Categorical
 Self_Employed,Categorical
 ApplicantIncome,Numerical
