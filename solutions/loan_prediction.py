@@ -24,5 +24,5 @@ train =pd.read_csv("/Users/pengchengliu/Documents/GitHub/Loan_Prediction/data/tr
 
 original = train
 
-print (sum(train.Loan_Status=='N')/(len(train.Loan_Status)))
+print (sum(train.Loan_Status=='N')/(len(train.Loan_Status)))#bad loan rate:32%
 
