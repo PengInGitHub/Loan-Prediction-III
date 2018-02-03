@@ -1,6 +1,6 @@
 feature_name,feature_type
 Loan_ID,Categorical
-Gender,Numerical
+Gender,Categorical
 Married,Categorical
 Dependents,Numerical
 Education,Categorical
