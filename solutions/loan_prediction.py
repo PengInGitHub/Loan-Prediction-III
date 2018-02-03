@@ -20,12 +20,9 @@ if not os.path.exists("model"):
 if not os.path.exists("preds"):
     os.makedirs("preds")    
 
-train =pd.read_csv("ppd_train_withid.csv")
-
-train.rename(columns={'target':'y'}, inplace=True)
-train.rename(columns={'Idx':'uid'}, inplace=True)
+train =pd.read_csv("/Users/pengchengliu/Documents/GitHub/Loan_Prediction/data/train.csv")
 
 original = train
 
-sum(train.target)/(len(train.target)-sum(train.target))
+print (sum(train.Loan_Status=='N')/(len(train.Loan_Status)))
 
