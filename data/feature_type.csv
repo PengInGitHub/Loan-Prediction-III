@@ -1,0 +1,14 @@
+feature_name,feature_type
+Loan_ID,Categorical
+Gender,Numerical
+Married,Categorical
+Dependents,Numerical
+Education,Categorical
+Self_Employed,Categorical
+ApplicantIncome,Numerical
+CoapplicantIncome,Numerical
+LoanAmount,Numerical
+Loan_Amount_Term,Numerical
+Credit_History,Categorical
+Property_Area,Categorical
+Loan_Status,Categorical
