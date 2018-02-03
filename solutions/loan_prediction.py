@@ -22,6 +22,7 @@ if not os.path.exists("preds"):
     os.makedirs("preds")    
 
 train =pd.read_csv(data_path+"train.csv")
+test =pd.read_csv(data_path+"test.csv")
 
 original = train
 
@@ -33,18 +34,22 @@ original = train
 ################################
 
 feature_type = pd.read_csv(data_path + "feature_type.csv")
-
 numeric_feature = list(feature_type[feature_type.feature_type=='Numerical'].feature_name)
-
-type(numeric_feature)
 
 train_numeric = train[['Loan_ID']+numeric_feature]
 train_rank = pd.DataFrame(train_numeric.Loan_ID,columns=['Loan_ID'])
 
+test_numeric = test[['Loan_ID']+numeric_feature]
+test_rank = pd.DataFrame(test_numeric.Loan_ID,columns=['Loan_ID'])
+
+
 for feature in numeric_feature:
     train_rank['r'+feature] = train_numeric[feature].rank(method='max')
-train_rank.to_csv('train_x_rank.csv',index=None)
+    test_rank['r'+feature] = test_numeric[feature].rank(method='max')
+    
+train_rank.to_csv(data_path+'train_x_rank.csv',index=None)
+test_rank.to_csv(data_path+'test_x_rank.csv',index=None)
+
 print (train_rank.shape)#(614, 7)
-
-
+print (test_rank.shape)#(614, 7)
 
