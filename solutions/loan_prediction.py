@@ -23,5 +23,24 @@ train =pd.read_csv("/Users/pengchengliu/Documents/GitHub/Loan_Prediction/data/tr
 
 original = train
 
-print (sum(train.Loan_Status=='N')/(len(train.Loan_Status)))#bad loan rate:32%
+#print (sum(train.Loan_Status=='N')/(len(train.Loan_Status)))#bad loan rate:32%
+
+
+################################
+#   2.num variable rankings    #
+################################
+
+feature_type = pd.read_csv("/Users/pengchengliu/Documents/GitHub/Loan_Prediction/data/feature_type.csv")
+
+numeric_feature = list(feature_type[feature_type.feature_type=='Numerical'].feature_name)
+
+type(numeric_feature)
+
+train_numeric = train[['Loan_ID']+numeric_feature]
+train_rank = pd.DataFrame(train_numeric.Loan_ID,columns=['Loan_ID'])
+
+for feature in numeric_feature:
+    train_rank['r'+feature] = train_numeric[feature].rank(method='max')
+train_rank.to_csv('train_x_rank.csv',index=None)
+print (train_rank.shape)#(614, 7)
 
